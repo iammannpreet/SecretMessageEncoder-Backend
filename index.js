@@ -4,7 +4,9 @@ import { getCoordinatesForString } from './coordinateHandler.js';
 import pixelData from './pixelData.js';
 import crypto from 'crypto';
 import admin from 'firebase-admin';
-import serviceAccount from './serviceAccountKey.json' assert { type: "json" };
+import fs from 'fs';
+
+const serviceAccount = JSON.parse(fs.readFileSync('./serviceAccountKey.json', 'utf8'));
 
 // Initialize Firebase Admin
 admin.initializeApp({
